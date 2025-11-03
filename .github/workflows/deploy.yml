@@ -22,17 +22,21 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       
-      - name: Setup Node
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '18.x'
           cache: 'npm'
       
       - name: Install dependencies
-        run: npm install
+        run: |
+          npm install --legacy-peer-deps
+          echo "Dependencies installed successfully"
       
       - name: Build
-        run: npm run build
+        run: |
+          npm run build
+          echo "Build completed successfully"
       
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -52,4 +56,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-
