@@ -69,7 +69,7 @@ const AiAssistantSection = () => {
   ];
 
   // YouTube Playlist ID - Buraya kendi playlist ID'nizi ekleyebilirsiniz
-  const youtubePlaylistId = 'PLrAXtmRdnEQy6nuLMljL5Z8KjZ4zX5KjX'; // Örnek ID
+  const youtubePlaylistId = 'PLrAXtmRdnEQy6nuLMljL5Z8KjZ4zX5KjX'; // Örnek ID - Kendi playlist ID'nizi ekleyin
 
   return (
     <section id="assistant" className="py-20 lg:py-32 bg-white">
@@ -182,43 +182,100 @@ const AiAssistantSection = () => {
             </p>
           </div>
 
-          {/* Sağ Sütun - YouTube Video Playlist */}
+          {/* Sağ Sütun - YouTube Video Listesi */}
           <div className="space-y-6">
             <h3 className="text-2xl font-serif font-bold text-gray-900">
               Düğün Videolarımız
             </h3>
             
             <div className="bg-white border-2 border-bodrum-200 rounded-2xl shadow-lg overflow-hidden">
-              {/* YouTube Playlist Embed */}
-              <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
-                <iframe
-                  className="absolute top-0 left-0 w-full h-full rounded-t-2xl"
-                  src={`https://www.youtube.com/embed/videoseries?list=${youtubePlaylistId}`}
-                  title="YouTube video player"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                ></iframe>
+              {/* Video Listesi */}
+              <div className="h-96 overflow-y-auto p-6 space-y-4 bg-gradient-to-b from-white to-bodrum-50">
+                {/* Örnek video listesi - YouTube playlist ID'nizi kullanarak videoları buraya ekleyebilirsiniz */}
+                {[
+                  {
+                    id: 'dQw4w9WgXcQ', // Örnek video ID - değiştirin
+                    title: 'Bodrum Koyu Düğünü - Ece & Mert',
+                    thumbnail: `https://img.youtube.com/vi/dQw4w9WgXcQ/mqdefault.jpg`,
+                    duration: '5:23',
+                  },
+                  {
+                    id: 'dQw4w9WgXcQ', // Örnek video ID - değiştirin
+                    title: 'Villa Düğünü - Ayşe & Can',
+                    thumbnail: `https://img.youtube.com/vi/dQw4w9WgXcQ/mqdefault.jpg`,
+                    duration: '4:15',
+                  },
+                  {
+                    id: 'dQw4w9WgXcQ', // Örnek video ID - değiştirin
+                    title: 'Sahil Düğünü - Zeynep & Emre',
+                    thumbnail: `https://img.youtube.com/vi/dQw4w9WgXcQ/mqdefault.jpg`,
+                    duration: '6:42',
+                  },
+                  {
+                    id: 'dQw4w9WgXcQ', // Örnek video ID - değiştirin
+                    title: 'Kır Düğünü - Selin & Burak',
+                    thumbnail: `https://img.youtube.com/vi/dQw4w9WgXcQ/mqdefault.jpg`,
+                    duration: '5:08',
+                  },
+                  {
+                    id: 'dQw4w9WgXcQ', // Örnek video ID - değiştirin
+                    title: 'After Party - Deniz & Kaan',
+                    thumbnail: `https://img.youtube.com/vi/dQw4w9WgXcQ/mqdefault.jpg`,
+                    duration: '3:55',
+                  },
+                ].map((video, index) => (
+                  <a
+                    key={index}
+                    href={`https://www.youtube.com/watch?v=${video.id}&list=${youtubePlaylistId}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex gap-4 p-3 rounded-lg hover:bg-bodrum-50 transition-colors border border-transparent hover:border-bodrum-200 group"
+                  >
+                    <div className="relative flex-shrink-0">
+                      <img
+                        src={video.thumbnail}
+                        alt={video.title}
+                        className="w-32 h-20 object-cover rounded-lg"
+                      />
+                      <div className="absolute bottom-1 right-1 bg-black/80 text-white text-xs px-1.5 py-0.5 rounded">
+                        {video.duration}
+                      </div>
+                      <div className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity rounded-lg">
+                        <svg
+                          className="w-8 h-8 text-white"
+                          fill="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path d="M8 5v14l11-7z" />
+                        </svg>
+                      </div>
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <h4 className="text-sm font-medium text-gray-900 group-hover:text-bodrum-600 transition-colors line-clamp-2">
+                        {video.title}
+                      </h4>
+                      <p className="text-xs text-gray-500 mt-1">
+                        YouTube'da izle
+                      </p>
+                    </div>
+                  </a>
+                ))}
               </div>
               
-              {/* Playlist Info */}
-              <div className="p-6 bg-gradient-to-b from-white to-bodrum-50">
-                <p className="text-sm text-gray-600 mb-2">
-                  Bodrum'da gerçekleştirdiğimiz düğünlerden özel videolar
-                </p>
-                <p className="text-xs text-gray-500">
-                  Playlist'teki tüm videoları izleyebilir, düğün planlamanız için ilham alabilirsiniz.
-                </p>
+              {/* Playlist Link */}
+              <div className="p-4 bg-bodrum-50 border-t border-bodrum-200">
+                <a
+                  href={`https://www.youtube.com/playlist?list=${youtubePlaylistId}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 text-sm font-medium text-bodrum-600 hover:text-bodrum-700 transition-colors"
+                >
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                  </svg>
+                  Tüm Videoları İzle
+                </a>
               </div>
-            </div>
-
-            {/* Alternative: Single Video Embed */}
-            <div className="bg-bodrum-50 p-4 rounded-lg border border-bodrum-200">
-              <p className="text-sm text-gray-700 mb-2 font-medium">
-                💡 İpucu
-              </p>
-              <p className="text-xs text-gray-600">
-                Kendi YouTube playlist ID'nizi eklemek için component içindeki <code className="bg-white px-2 py-1 rounded">youtubePlaylistId</code> değişkenini güncelleyin.
-              </p>
             </div>
           </div>
         </div>
