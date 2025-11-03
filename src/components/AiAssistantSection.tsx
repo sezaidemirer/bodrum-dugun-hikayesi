@@ -120,9 +120,9 @@ const AiAssistantSection = () => {
             </h3>
             
             {/* Chat Interface */}
-            <div className="bg-white border-2 border-bodrum-200 rounded-2xl shadow-lg overflow-hidden">
+            <div className="bg-white border-2 border-bodrum-200 rounded-2xl shadow-lg overflow-hidden flex flex-col" style={{ height: 'calc((50vw - 4rem) * 0.5625)' }}>
               {/* Messages */}
-              <div className="overflow-y-auto p-6 space-y-4 bg-gradient-to-b from-white to-bodrum-50" style={{ height: 'calc((100vw - 4rem) * 0.5625)' }}>
+              <div className="flex-1 overflow-y-auto p-6 space-y-4 bg-gradient-to-b from-white to-bodrum-50 min-h-0">
                 {messages.map((message) => (
                   <div
                     key={message.id}
@@ -180,7 +180,7 @@ const AiAssistantSection = () => {
             
             <div className="bg-white border-2 border-bodrum-200 rounded-2xl shadow-lg overflow-hidden">
               {/* Ana Video Player - Üstte */}
-              <div className="relative w-full rounded-t-2xl overflow-hidden bg-gray-900" style={{ paddingBottom: '56.25%' }}>
+              <div className="relative w-full rounded-t-2xl overflow-hidden bg-gray-900" style={{ paddingBottom: '56.25%' }} id="video-player">
                 <iframe
                   className="absolute top-0 left-0 w-full h-full rounded-t-2xl"
                   src={`https://www.youtube.com/embed/${defaultVideoId}?rel=0&modestbranding=1`}
