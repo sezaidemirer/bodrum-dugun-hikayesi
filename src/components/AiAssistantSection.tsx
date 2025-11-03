@@ -14,8 +14,6 @@ const AiAssistantSection = () => {
     }
   };
 
-  const [videoLoaded, setVideoLoaded] = useState(false);
-
   const [messages, setMessages] = useState<Message[]>([
     {
       id: 1,
@@ -67,10 +65,6 @@ const AiAssistantSection = () => {
     setInputValue('');
   };
 
-
-  // YouTube Playlist ID - Buraya kendi playlist ID'nizi ekleyebilirsiniz
-  const youtubePlaylistId = 'PLrAXtmRdnEQy6nuLMljL5Z8KjZ4zX5KjX'; // Örnek ID - Kendi playlist ID'nizi ekleyin
-  
   // Ana video ID - Playlist yoksa gösterilecek örnek video
   const defaultVideoId = 'BTVLwbKpn70'; // Ana video ID
 
