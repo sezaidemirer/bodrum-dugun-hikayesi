@@ -2,6 +2,8 @@
 
 Lüks destinasyon düğünleri için sinematik fotoğraf, video prodüksiyon ve drone çekimi hizmetleri sunan bir web sitesi.
 
+🌐 **Canlı Site:** [GitHub Pages](https://sezaidemirer.github.io/bodrum-dugun-hikayesi/)
+
 ## Teknolojiler
 
 - **React 19** - UI kütüphanesi
@@ -65,7 +67,7 @@ src/
 
 ## Renkler ve Tipografi
 
-- **Renkler**: Soft altın (champagne), hafif pastel nude/pembe tonları
+- **Renkler**: Bodrum mavisi (Ege denizi tonları)
 - **Başlıklar**: Playfair Display (serif)
 - **Metinler**: Inter (sans-serif)
 
