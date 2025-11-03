@@ -4,7 +4,7 @@ import react from '@vitejs/plugin-react'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/bodrum-d-n-hikayesi/',
+  base: '/bodrum-dugun-hikayesi/',
   server: {
     port: 5173,
     strictPort: false,
