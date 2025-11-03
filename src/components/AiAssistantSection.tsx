@@ -7,6 +7,13 @@ interface Message {
 }
 
 const AiAssistantSection = () => {
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   const [messages, setMessages] = useState<Message[]>([
     {
       id: 1,
@@ -89,21 +96,27 @@ const AiAssistantSection = () => {
           </p>
         </div>
 
-        {/* Features */}
-        <div className="grid md:grid-cols-3 gap-6 mb-12">
-          {[
-            'Tarih ve mekan planlama önerileri',
-            'Çekim programı taslağı',
-            'Paket önerileri ve blog içerikleri',
-          ].map((feature, index) => (
-            <div
-              key={index}
-              className="bg-bodrum-50 p-6 rounded-lg border border-bodrum-100"
-            >
-              <p className="text-gray-700 font-medium">{feature}</p>
+          {/* Reklam Alanı - Erken Rezervasyon */}
+          <div className="mb-12">
+            <div className="bg-gradient-to-r from-bodrum-600 to-bodrum-700 rounded-xl p-6 md:p-8 shadow-lg">
+              <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+                <div className="flex-1 text-center md:text-left">
+                  <h3 className="text-2xl md:text-3xl font-serif font-bold text-white mb-2">
+                    2026 Erken Rezervasyon Dönemi Başladı
+                  </h3>
+                  <p className="text-lg text-white/90">
+                    %50 indirim fırsatlarını kaçırma! Sınırlı kontenjan için hemen rezervasyon yap.
+                  </p>
+                </div>
+                <button
+                  onClick={() => scrollToSection('contact')}
+                  className="px-8 py-4 bg-white text-bodrum-600 font-bold rounded-lg hover:bg-bodrum-50 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 whitespace-nowrap"
+                >
+                  Hemen Rezervasyon Yap
+                </button>
+              </div>
             </div>
-          ))}
-        </div>
+          </div>
 
         {/* 2 Column Layout */}
         <div className="grid lg:grid-cols-2 gap-8">
