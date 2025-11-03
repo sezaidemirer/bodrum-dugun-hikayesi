@@ -19,7 +19,7 @@ const AiAssistantSection = () => {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: 1,
-      text: 'Merhaba! Size nasıl yardımcı olabilirim? Düğün planlamanız hakkında sorularınızı sorabilirsiniz.',
+      text: '💬 Merhaba!\n\nBen Dijital Düğün Planlama Asistanın Hera.\n\nMitolojik bir hikayenin sıcaklığında, sana özel bir düğün çekimi planlamak için buradayım.\n\nLütfen aklındaki tüm detayları bana sor — birlikte büyülü bir hikaye yazalım. 💍✨',
       isUser: false,
     },
   ]);
@@ -116,7 +116,7 @@ const AiAssistantSection = () => {
           {/* Sol Sütun - Dijital Asistan */}
           <div className="space-y-6">
             <h3 className="text-2xl font-serif font-bold text-gray-900">
-              Düğün Planlama Asistanı
+              Düğün Planlama Asistanı: Hera!
             </h3>
             
             {/* Chat Interface */}
@@ -137,7 +137,7 @@ const AiAssistantSection = () => {
                           : 'bg-white text-gray-800 border border-bodrum-200'
                       }`}
                     >
-                      <p className="text-sm leading-relaxed">{message.text}</p>
+                      <p className="text-sm leading-relaxed whitespace-pre-line">{message.text}</p>
                     </div>
                   </div>
                 ))}
