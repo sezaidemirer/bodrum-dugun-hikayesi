@@ -26,17 +26,23 @@ const HeroSection = () => {
       <div className="absolute inset-0 bg-gradient-to-b from-white/70 via-white/50 to-white/70" />
 
       {/* Animated Gelin Image - Floating Effect */}
-      <div className="absolute right-0 top-0 bottom-0 w-full md:w-1/2 lg:w-2/5 hidden md:block">
+      <div className="absolute right-0 top-0 bottom-0 w-full md:w-1/2 lg:w-2/5">
         <div className="relative h-full w-full">
           <img
-            src="/images/gelin_banner.jpg"
+            src={`${import.meta.env.BASE_URL || '/'}images/gelin_banner.jpg`}
             alt="Gelin"
-            className="absolute inset-0 w-full h-full object-cover object-center animate-float"
+            className="absolute inset-0 w-full h-full object-cover object-center animate-float z-10"
             style={{
               clipPath: 'polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%)',
             }}
+            loading="eager"
+            onError={(e) => {
+              console.error('Gelin görseli yüklenemedi:', e);
+              // Fallback görsel
+              e.currentTarget.src = 'https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=800&h=1200&fit=crop';
+            }}
           />
-          <div className="absolute inset-0 bg-gradient-to-l from-white via-white/60 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-l from-white via-white/40 to-transparent z-20" />
         </div>
       </div>
 
