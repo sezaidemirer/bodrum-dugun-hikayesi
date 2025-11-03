@@ -22,6 +22,7 @@ const Header = () => {
 
   // Daha az ve sade menü öğeleri
   const menuItems = [
+    { label: 'Hera AI', id: 'assistant' },
     { label: 'Hizmetler', id: 'services' },
     { label: 'Portfolio', id: 'portfolio' },
     { label: 'Blog', id: 'blog' },
