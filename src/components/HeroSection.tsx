@@ -25,8 +25,8 @@ const HeroSection = () => {
       {/* Overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-white/70 via-white/50 to-white/70" />
 
-      {/* Animated Gelin Image - Floating Effect */}
-      <div className="absolute right-0 top-0 bottom-0 w-full md:w-1/2 lg:w-2/5">
+      {/* Animated Gelin Image - Floating Effect - Sadece desktop'ta görünür */}
+      <div className="hidden md:block absolute right-0 top-0 bottom-0 w-full md:w-1/2 lg:w-2/5">
         <div className="relative h-full w-full">
           <img
             src={`${import.meta.env.BASE_URL || '/'}images/gelin_banner.jpg`}
@@ -47,10 +47,10 @@ const HeroSection = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 lg:px-8">
-        <div className="max-w-4xl md:max-w-2xl text-left">
+      <div className="relative z-10 container mx-auto px-6 md:px-4 lg:px-8">
+        <div className="max-w-full md:max-w-2xl text-left">
           {/* Main Heading */}
-          <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-serif font-bold text-gray-900 mb-6 leading-tight">
+          <h1 className="text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-serif font-bold text-gray-900 mb-4 md:mb-6 leading-tight">
             Bodrum'da Düğün Hikayenizi
             <br />
             <span className="text-bodrum-600">Sinematik Bir Masala</span>
@@ -59,23 +59,23 @@ const HeroSection = () => {
           </h1>
 
           {/* Description */}
-          <p className="text-base md:text-lg text-gray-700 mb-10 max-w-2xl leading-relaxed">
+          <p className="text-sm md:text-lg text-gray-700 mb-6 md:mb-10 max-w-2xl leading-relaxed">
             Fotoğraf, video, drone çekimi ve dijital düğün planlama asistanı ile
             tüm süreci tek çatı altında topluyoruz. Bodrum ve Ege kıyılarında
             unutulmaz düğün hikayenizi oluşturun.
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-start gap-4">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-start gap-3 md:gap-4">
             <button
               onClick={() => scrollToSection('contact')}
-              className="px-8 py-4 bg-bodrum-600 text-white font-semibold rounded-lg shadow-lg hover:bg-bodrum-700 transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1"
+              className="px-6 py-3 md:px-8 md:py-4 bg-bodrum-600 text-white text-sm md:text-base font-semibold rounded-lg shadow-lg hover:bg-bodrum-700 transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1"
             >
               Düğün Hikayenizi Planlayın
             </button>
             <button
               onClick={() => scrollToSection('portfolio')}
-              className="px-8 py-4 bg-white text-bodrum-700 font-semibold rounded-lg border-2 border-bodrum-600 hover:bg-bodrum-50 transition-all duration-300"
+              className="px-6 py-3 md:px-8 md:py-4 bg-white text-bodrum-700 text-sm md:text-base font-semibold rounded-lg border-2 border-bodrum-600 hover:bg-bodrum-50 transition-all duration-300"
             >
               Portfolyoyu Gör
             </button>
