@@ -9,7 +9,7 @@ const HeroSection = () => {
   return (
     <section
       id="hero"
-          className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-white via-bodrum-50 to-amber-100"
+      className="relative min-h-screen flex flex-col md:flex-row md:items-center md:justify-center overflow-hidden bg-gradient-to-br from-white via-bodrum-50 to-amber-100"
     >
       {/* Animated Background Image - Ken Burns Effect */}
       <div className="absolute inset-0 overflow-hidden">
@@ -25,7 +25,21 @@ const HeroSection = () => {
       {/* Overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-white/70 via-white/50 to-white/70" />
 
-      {/* Animated Gelin Image - Floating Effect - Sadece desktop'ta görünür */}
+      {/* Mobil Görsel - Üstte, Sadece mobilde görünür */}
+      <div className="relative w-full h-64 md:hidden">
+        <img
+          src={`${import.meta.env.BASE_URL || '/'}images/gelin_banner.jpg`}
+          alt="Gelin"
+          className="w-full h-full object-cover object-center"
+          loading="eager"
+          onError={(e) => {
+            console.error('Gelin görseli yüklenemedi:', e);
+            e.currentTarget.src = 'https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=800&h=1200&fit=crop';
+          }}
+        />
+      </div>
+
+      {/* Desktop Görsel - Sağda, Sadece desktop'ta görünür */}
       <div className="hidden md:block absolute right-0 top-0 bottom-0 w-full md:w-1/2 lg:w-2/5">
         <div className="relative h-full w-full">
           <img
@@ -38,7 +52,6 @@ const HeroSection = () => {
             loading="eager"
             onError={(e) => {
               console.error('Gelin görseli yüklenemedi:', e);
-              // Fallback görsel
               e.currentTarget.src = 'https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=800&h=1200&fit=crop';
             }}
           />
@@ -47,7 +60,7 @@ const HeroSection = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-6 md:px-4 lg:px-8">
+      <div className="relative z-10 container mx-auto px-6 md:px-4 lg:px-8 flex-1 flex items-center md:items-center py-8 md:py-0">
         <div className="max-w-full md:max-w-2xl text-left">
           {/* Main Heading */}
           <h1 className="text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-serif font-bold text-gray-900 mb-4 md:mb-6 leading-tight">
