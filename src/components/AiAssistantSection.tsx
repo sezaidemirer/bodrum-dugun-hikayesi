@@ -180,26 +180,15 @@ const AiAssistantSection = () => {
             
             <div className="bg-white border-2 border-bodrum-200 rounded-2xl shadow-lg overflow-hidden">
               {/* Ana Video Player - Üstte */}
-              <div className="relative w-full rounded-t-2xl overflow-hidden" style={{ paddingBottom: '56.25%' }}>
+              <div className="relative w-full rounded-t-2xl overflow-hidden bg-gray-900" style={{ paddingBottom: '56.25%' }}>
                 <iframe
                   className="absolute top-0 left-0 w-full h-full rounded-t-2xl"
-                  src={`https://www.youtube.com/embed/${youtubePlaylistId ? `videoseries?list=${youtubePlaylistId}` : defaultVideoId}?rel=0&modestbranding=1`}
+                  src={`https://www.youtube.com/embed/${defaultVideoId}?rel=0&modestbranding=1`}
                   title="YouTube video player"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   allowFullScreen
-                  onLoad={() => setVideoLoaded(true)}
+                  frameBorder="0"
                 ></iframe>
-                {/* Loading Placeholder - Sadece video yüklenene kadar */}
-                {!videoLoaded && (
-                  <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-bodrum-100 to-bodrum-200 rounded-t-2xl pointer-events-none">
-                    <div className="text-center">
-                      <svg className="w-16 h-16 text-bodrum-600 animate-pulse mx-auto mb-2" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-                      </svg>
-                      <p className="text-sm text-bodrum-700 font-medium">Video yükleniyor...</p>
-                    </div>
-                  </div>
-                )}
               </div>
               
               {/* Video Listesi - Altta */}
