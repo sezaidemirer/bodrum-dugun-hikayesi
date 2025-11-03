@@ -79,7 +79,7 @@ const AiAssistantSection = () => {
   const youtubePlaylistId = 'PLrAXtmRdnEQy6nuLMljL5Z8KjZ4zX5KjX'; // Örnek ID - Kendi playlist ID'nizi ekleyin
   
   // Ana video ID - Playlist yoksa gösterilecek örnek video
-  const defaultVideoId = 'jNQXAC9IVRw'; // Örnek video ID - Kendi video ID'nizi ekleyin
+  const defaultVideoId = 'BTVLwbKpn70'; // Ana video ID
 
   return (
     <section id="assistant" className="py-20 lg:py-32 bg-white">
@@ -230,33 +230,33 @@ const AiAssistantSection = () => {
                 {/* Örnek video listesi - YouTube playlist ID'nizi kullanarak videoları buraya ekleyebilirsiniz */}
                 {[
                   {
-                    id: 'dQw4w9WgXcQ', // Örnek video ID - değiştirin
-                    title: 'Bodrum Koyu Düğünü - Ece & Mert',
-                    thumbnail: `https://img.youtube.com/vi/dQw4w9WgXcQ/mqdefault.jpg`,
+                    id: 'BTVLwbKpn70',
+                    title: 'Bodrum Düğün Hikayesi - Rehber Video',
+                    thumbnail: `https://img.youtube.com/vi/BTVLwbKpn70/mqdefault.jpg`,
                     duration: '5:23',
                   },
                   {
-                    id: 'dQw4w9WgXcQ', // Örnek video ID - değiştirin
-                    title: 'Villa Düğünü - Ayşe & Can',
-                    thumbnail: `https://img.youtube.com/vi/dQw4w9WgXcQ/mqdefault.jpg`,
+                    id: 'BTVLwbKpn70',
+                    title: 'Düğün Planlama Rehberi',
+                    thumbnail: `https://img.youtube.com/vi/BTVLwbKpn70/mqdefault.jpg`,
                     duration: '4:15',
                   },
                   {
-                    id: 'dQw4w9WgXcQ', // Örnek video ID - değiştirin
-                    title: 'Sahil Düğünü - Zeynep & Emre',
-                    thumbnail: `https://img.youtube.com/vi/dQw4w9WgXcQ/mqdefault.jpg`,
+                    id: 'BTVLwbKpn70',
+                    title: 'Bodrum Düğün Çekimi İpuçları',
+                    thumbnail: `https://img.youtube.com/vi/BTVLwbKpn70/mqdefault.jpg`,
                     duration: '6:42',
                   },
                   {
-                    id: 'dQw4w9WgXcQ', // Örnek video ID - değiştirin
-                    title: 'Kır Düğünü - Selin & Burak',
-                    thumbnail: `https://img.youtube.com/vi/dQw4w9WgXcQ/mqdefault.jpg`,
+                    id: 'BTVLwbKpn70',
+                    title: 'Drone Çekimi Rehberi',
+                    thumbnail: `https://img.youtube.com/vi/BTVLwbKpn70/mqdefault.jpg`,
                     duration: '5:08',
                   },
                   {
-                    id: 'dQw4w9WgXcQ', // Örnek video ID - değiştirin
-                    title: 'After Party - Deniz & Kaan',
-                    thumbnail: `https://img.youtube.com/vi/dQw4w9WgXcQ/mqdefault.jpg`,
+                    id: 'BTVLwbKpn70',
+                    title: 'Düğün Fotoğrafçılığı İpuçları',
+                    thumbnail: `https://img.youtube.com/vi/BTVLwbKpn70/mqdefault.jpg`,
                     duration: '3:55',
                   },
                 ].map((video, index) => (
