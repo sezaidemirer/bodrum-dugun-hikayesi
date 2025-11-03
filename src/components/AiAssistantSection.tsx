@@ -112,7 +112,7 @@ const AiAssistantSection = () => {
           </div>
 
         {/* 2 Column Layout */}
-        <div className="grid lg:grid-cols-2 gap-8">
+        <div className="grid lg:grid-cols-2 gap-8 items-start">
           {/* Sol Sütun - Dijital Asistan */}
           <div className="space-y-6">
             <h3 className="text-2xl font-serif font-bold text-gray-900">
@@ -122,7 +122,7 @@ const AiAssistantSection = () => {
             {/* Chat Interface */}
             <div className="bg-white border-2 border-bodrum-200 rounded-2xl shadow-lg overflow-hidden">
               {/* Messages */}
-              <div className="h-96 overflow-y-auto p-6 space-y-4 bg-gradient-to-b from-white to-bodrum-50">
+              <div className="overflow-y-auto p-6 space-y-4 bg-gradient-to-b from-white to-bodrum-50" style={{ height: 'calc((100vw - 4rem) * 0.5625)' }}>
                 {messages.map((message) => (
                   <div
                     key={message.id}
