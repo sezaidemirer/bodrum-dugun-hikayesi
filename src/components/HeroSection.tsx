@@ -9,7 +9,7 @@ const HeroSection = () => {
   return (
     <section
       id="hero"
-          className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-white via-bodrum-50 to-pink-50"
+          className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-white via-bodrum-50 to-amber-100"
     >
       {/* Animated Background Image - Ken Burns Effect */}
       <div className="absolute inset-0 overflow-hidden">
