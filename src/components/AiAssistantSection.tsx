@@ -182,15 +182,26 @@ const AiAssistantSection = () => {
             </p>
           </div>
 
-          {/* Sağ Sütun - YouTube Video Listesi */}
+          {/* Sağ Sütun - Ana Video + Playlist */}
           <div className="space-y-6">
             <h3 className="text-2xl font-serif font-bold text-gray-900">
               Düğün Videolarımız
             </h3>
             
             <div className="bg-white border-2 border-bodrum-200 rounded-2xl shadow-lg overflow-hidden">
-              {/* Video Listesi */}
-              <div className="h-96 overflow-y-auto p-6 space-y-4 bg-gradient-to-b from-white to-bodrum-50">
+              {/* Ana Video Player - Üstte */}
+              <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+                <iframe
+                  className="absolute top-0 left-0 w-full h-full rounded-t-2xl"
+                  src={`https://www.youtube.com/embed/${youtubePlaylistId ? `videoseries?list=${youtubePlaylistId}` : 'dQw4w9WgXcQ'}`}
+                  title="YouTube video player"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                ></iframe>
+              </div>
+              
+              {/* Video Listesi - Altta */}
+              <div className="max-h-96 overflow-y-auto p-4 space-y-3 bg-gradient-to-b from-white to-bodrum-50">
                 {/* Örnek video listesi - YouTube playlist ID'nizi kullanarak videoları buraya ekleyebilirsiniz */}
                 {[
                   {
@@ -224,41 +235,33 @@ const AiAssistantSection = () => {
                     duration: '3:55',
                   },
                 ].map((video, index) => (
-                  <a
+                  <button
                     key={index}
-                    href={`https://www.youtube.com/watch?v=${video.id}&list=${youtubePlaylistId}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex gap-4 p-3 rounded-lg hover:bg-bodrum-50 transition-colors border border-transparent hover:border-bodrum-200 group"
+                    onClick={() => {
+                      // Ana videoyu değiştir
+                      const iframe = document.querySelector('iframe[title="YouTube video player"]') as HTMLIFrameElement;
+                      if (iframe) {
+                        iframe.src = `https://www.youtube.com/embed/${video.id}?list=${youtubePlaylistId}&autoplay=1`;
+                      }
+                    }}
+                    className="flex gap-3 p-3 rounded-lg hover:bg-bodrum-50 transition-colors border border-transparent hover:border-bodrum-200 group w-full text-left"
                   >
                     <div className="relative flex-shrink-0">
                       <img
                         src={video.thumbnail}
                         alt={video.title}
-                        className="w-32 h-20 object-cover rounded-lg"
+                        className="w-24 h-16 object-cover rounded-lg"
                       />
                       <div className="absolute bottom-1 right-1 bg-black/80 text-white text-xs px-1.5 py-0.5 rounded">
                         {video.duration}
-                      </div>
-                      <div className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity rounded-lg">
-                        <svg
-                          className="w-8 h-8 text-white"
-                          fill="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path d="M8 5v14l11-7z" />
-                        </svg>
                       </div>
                     </div>
                     <div className="flex-1 min-w-0">
                       <h4 className="text-sm font-medium text-gray-900 group-hover:text-bodrum-600 transition-colors line-clamp-2">
                         {video.title}
                       </h4>
-                      <p className="text-xs text-gray-500 mt-1">
-                        YouTube'da izle
-                      </p>
                     </div>
-                  </a>
+                  </button>
                 ))}
               </div>
               
