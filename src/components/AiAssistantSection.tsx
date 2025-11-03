@@ -70,6 +70,9 @@ const AiAssistantSection = () => {
 
   // YouTube Playlist ID - Buraya kendi playlist ID'nizi ekleyebilirsiniz
   const youtubePlaylistId = 'PLrAXtmRdnEQy6nuLMljL5Z8KjZ4zX5KjX'; // Örnek ID - Kendi playlist ID'nizi ekleyin
+  
+  // Ana video ID - Playlist yoksa gösterilecek örnek video
+  const defaultVideoId = 'dQw4w9WgXcQ'; // Örnek video ID - Kendi video ID'nizi ekleyin
 
   return (
     <section id="assistant" className="py-20 lg:py-32 bg-white">
@@ -193,7 +196,7 @@ const AiAssistantSection = () => {
               <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
                 <iframe
                   className="absolute top-0 left-0 w-full h-full rounded-t-2xl"
-                  src={`https://www.youtube.com/embed/${youtubePlaylistId ? `videoseries?list=${youtubePlaylistId}` : 'dQw4w9WgXcQ'}`}
+                  src={`https://www.youtube.com/embed/${youtubePlaylistId ? `videoseries?list=${youtubePlaylistId}` : defaultVideoId}`}
                   title="YouTube video player"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   allowFullScreen
