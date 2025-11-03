@@ -65,15 +65,6 @@ const AiAssistantSection = () => {
     setInputValue('');
   };
 
-  const handleExampleClick = (example: string) => {
-    setInputValue(example);
-  };
-
-  const exampleQuestions = [
-    "Bodrum'da Eylül ayında açık hava düğünü planlıyorum, çekim için en iyi saat nedir?",
-    "Drone çekimi için ekstra kaç saat ayırmalıyız?",
-    "Bodrum'da hangi mekanlar düğün çekimi için önerilir?",
-  ];
 
   // YouTube Playlist ID - Buraya kendi playlist ID'nizi ekleyebilirsiniz
   const youtubePlaylistId = 'PLrAXtmRdnEQy6nuLMljL5Z8KjZ4zX5KjX'; // Örnek ID - Kendi playlist ID'nizi ekleyin
@@ -150,25 +141,6 @@ const AiAssistantSection = () => {
                 ))}
               </div>
 
-              {/* Example Questions */}
-              {messages.length === 1 && (
-                <div className="px-6 py-4 bg-bodrum-50 border-t border-bodrum-200">
-                  <p className="text-sm font-medium text-gray-700 mb-3">
-                    Örnek sorular:
-                  </p>
-                  <div className="space-y-2">
-                    {exampleQuestions.map((question, index) => (
-                      <button
-                        key={index}
-                        onClick={() => handleExampleClick(question)}
-                        className="block w-full text-left text-sm text-bodrum-700 hover:text-bodrum-800 hover:bg-white p-2 rounded transition-colors"
-                      >
-                        "{question}"
-                      </button>
-                    ))}
-                  </div>
-                </div>
-              )}
 
               {/* Input */}
               <div className="p-6 bg-white border-t border-bodrum-200">
